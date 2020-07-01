@@ -5,3 +5,5 @@ was hab ich gemacht
 findings
 mit überschriften
 notebook verlinken
+
+notebook lesbar machen, genau erklären mit markdown, schön machen, inhaltsverzeichnis

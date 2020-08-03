@@ -1,9 +1,9 @@
 house_prices_kaggle
-# Project No. 2: Kaggle competition "House Prices: Advanced Regression Techniques" 
+# Project No. 2: Kaggle challenge "House Prices: Advanced Regression Techniques" 
 
-This is the submission of my frist Kaggle competition: <a href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques">House Prices: Advanced Regression Techniques</a> 
+This is the submission of my frist Kaggle challenge: <a href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques">House Prices: Advanced Regression Techniques</a> 
 
-Below, I outline the goal of the competition as well as how approached building a solution. Please view <a href="https://github.com/HeleneFabia/house-prices-kaggle/blob/master/advanced_regression_house_prices_kaggle.ipynb">my notebook</a> for a more detailed explanation of what I did. 
+Below, I outline the goal of the challenge as well as how approached building a solution. Please view <a href="https://github.com/HeleneFabia/house-prices-kaggle/blob/master/advanced_regression_house_prices_kaggle.ipynb">my notebook</a> for a more detailed explanation of what I did. 
 
 <h2> Dataset </h2>
 
@@ -17,17 +17,24 @@ To preprocess the data, I handle categorical, ordinal and numerical features sep
 
 <h2> Modelling </h2>
 
-I used to different models: Random Forest Regressors and Extra Trees Regressor. For both, I use RandomSearch and GridSearch to find good hyperparameters.
+I used Random Forest Regressor as well as RandomSearch and GridSearch to find good hyperparameters for the model.
 
 <h2> Evaluation </h2>
 
-For both models, I look at the root mean squared error to evaluate them as well at feature importance in order to gain a better understanding of the model's output.
+To evaluate my model, I have a look at the first 15 predictions to gain a rough idea of how well my model did:
 
-RMSE of Random Forest Regressor:
+![Prediction vs Actual Prices](https://github.com/HeleneFabia/house-prices-kaggle/blob/master/evaluation.png)
 
-RMSE of Extra Trees Regressor:
+I look at at the feature importance in order to gain a better understanding of the model's output as well as at the root mean squared logarithmic error, which serves as the evaluation metric of this challenge
 
-Based on the evalutaion of the predictions of the validation set, I use ... as he model to predict house prices in the test set. This gives me a RMSE of ... on the public leaderboard and ... on the private leaderboard.
+Feature importance:
+![Feature Importance](https://github.com/HeleneFabia/house-prices-kaggle/blob/master/feature_importance.png)
+
+RMSLE of the predictions of the validation set: 
+0.13463
+
+RMSLE of the <a href="https://github.com/HeleneFabia/house-prices-kaggle/blob/master/house_prices_sub.csv">predictions of the test set</a> (as shown on the Kaggle leaderboard):
+0.14693
 
 <h2> Reflection </h2>
 
@@ -35,4 +42,4 @@ Although I'm quite satisfied with this project and my solution, there are still 
 
 My model uses every single feature in the dataframe. Creating new features that bundle some of the given features (e.g. the total number of square feet of a house) could make the model slimmer and thus faster and maybe more accurate (since fewer features may reduce the risk of overfitting).
 
-I only experimented with two types of decision tree algorithm, Random Forest Regressor and Extra Trees Regressor. Maybe Gradient Boosting or XGBoost would yield better results.
+I only experimented with one types of decision tree algorithm, Random Forest Regressor. Maybe ExtraTrees Regressor, Gradient Boosting or XGBoost would yield better results.

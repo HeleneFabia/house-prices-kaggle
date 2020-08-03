@@ -39,7 +39,5 @@ RMSLE of the <a href="https://github.com/HeleneFabia/house-prices-kaggle/blob/ma
 <h2> Reflection </h2>
 
 Although I'm quite satisfied with this project and my solution, there are still some things that could be improved:
-
-My model uses every single feature in the dataframe. Creating new features that bundle some of the given features (e.g. the total number of square feet of a house) could make the model slimmer and thus faster and maybe more accurate (since fewer features may reduce the risk of overfitting).
-
-I only experimented with one types of decision tree algorithm, Random Forest Regressor. Maybe ExtraTrees Regressor, Gradient Boosting or XGBoost would yield better results.
+- My model uses every single feature in the dataframe. Creating new features that bundle some of the given features (e.g. the total number of square feet of a house) could make the model slimmer and thus faster and maybe also more accurate.
+- I only experimented with one type of decision tree algorithm, Random Forest Regressor. Maybe ExtraTrees Regressor, Gradient Boosting or XGBoost would yield better results.

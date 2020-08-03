@@ -28,6 +28,7 @@ To evaluate my model, I have a look at the first 15 predictions to gain a rough 
 I look at at the feature importance in order to gain a better understanding of the model's output as well as at the root mean squared logarithmic error, which serves as the evaluation metric of this challenge
 
 Feature importance:
+
 ![Feature Importance](https://github.com/HeleneFabia/house-prices-kaggle/blob/master/feature_importance.png)
 
 RMSLE of the predictions of the validation set: 

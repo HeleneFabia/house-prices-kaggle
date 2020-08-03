@@ -3,13 +3,9 @@ house_prices_kaggle
 
 This is the submission of my frist Kaggle competition: <a href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques">House Prices: Advanced Regression Techniques</a> 
 
-<a href="https://github.com/HeleneFabia/house-prices-kaggle/blob/master/advanced_regression_house_prices_kaggle.ipynb">My notebook</a> includes the following parts, whcih are described below in detail:
-- Data Preprocessing:
-  -
-  -
-- ML Model:
-  -
-  -
-- Outcome:
-  -
-  -
+<a href="https://github.com/HeleneFabia/house-prices-kaggle/blob/master/advanced_regression_house_prices_kaggle.ipynb">My notebook</a> includes the following two parts, which are described below in detail:
+
+- Data preprocessing
+  - ...
+- Modelling
+  - ...

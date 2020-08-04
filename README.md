@@ -17,7 +17,17 @@ To preprocess the data, I handle categorical, ordinal and numerical features sep
 
 ## Modelling
 
-I used Random Forest Regressor as well as RandomSearch and GridSearch to find good hyperparameters for the model.
+I used Random Forest Regressor as well as RandomSearch and GridSearch to find good hyperparameters for the model:
+
+    model = RandomForestRegressor(
+        bootstrap = True, 
+        max_depth = 60, 
+        max_features = 'auto', 
+        min_samples_leaf = 1, 
+        min_samples_split = 4, 
+        n_estimators = 1000 , 
+        n_jobs = -1
+        )
 
 ## Evaluation 
 

@@ -5,6 +5,10 @@ This is the submission of my frist Kaggle challenge: <a href="https://www.kaggle
 
 Below, I outline the goal of the challenge as well as how approached building a solution. Please view <a href="https://github.com/HeleneFabia/house-prices-kaggle/blob/master/advanced_regression_house_prices_kaggle.ipynb">my notebook</a> for a more detailed explanation of what I did. 
 
+<p align="center">
+  <img width="400" height="200" src="https://cdn.pixabay.com/photo/2019/04/29/20/41/amsterdam-4167026_960_720.png">
+</p>
+
 ## Dataset 
 
 The 1460x82 dataset provided by Kaggle contains the data of 1460 houses in Ames, Iowa. Each house is described by 79 features, including general information such as the size in square feet and the year it was sold, as well as very specific details such as the slope of the property or the roof material (For the complete list of features, please view <a href="https://github.com/HeleneFabia/house-prices-kaggle/blob/master/data_description.txt">data_description.txt</a>) 

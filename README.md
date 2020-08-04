@@ -61,7 +61,7 @@ Although I'm quite satisfied with this project and my solution, there are still 
 
 When target mean encoding the categorical features in the validation and test set, I encountered an issue: I want to have the same target mean encoding in all three datasets. However, some categorical feature values appear in the validation and/or test set but not in the training set, so they do not have a target mean that can be mapped onto the feature values in the validation set.
 
-The function encode_dataframe (which I use to target mean encode the training set) (see <a href="https://github.com/HeleneFabia/house-prices-kaggle/blob/master/utils_house_prices.py">utils.py</a>) takes the parameter train_set_categorical_encoded_means. This parameter is a dictionary with the column names of the encoded categorical features as keys and the respective target smooth meaning encoding as values. Thus, I now have to build this dictionary which I can then use as an input for the function encode_dataframe to encode the validation set.
+The function encode_dataframe (which I use to target mean encode the training set) (see <a href="https://github.com/HeleneFabia/house-prices-kaggle/blob/master/utils_house_prices.py">utils_house_prices.py</a>) takes the parameter train_set_categorical_encoded_means. This parameter is a dictionary with the column names of the encoded categorical features as keys and the respective target smooth meaning encoding as values. Thus, I now have to build this dictionary which I can then use as an input for the function encode_dataframe to encode the validation set.
 
 First, I create a dictionary (called train_val_categorical_global_means) with the all unique categorical feature values as keys and the global mean of SalePrice as values
 

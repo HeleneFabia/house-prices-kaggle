@@ -64,7 +64,7 @@ numerical_features = ['LotFrontage', 'LotArea', 'YearBuilt', 'YearRemodAdd', 'Ma
 
 def calc_smooth_mean(df, by, on, m):
     """ 
-    cal_smooth_mean takes a data frame df and target mean encodes a feature 
+    cal_smooth_mean takes a data frame and target mean encodes a feature 
     Parameters:
     -----------
     df: the dataframe
@@ -88,12 +88,12 @@ def calc_smooth_mean(df, by, on, m):
 
 def encode_dataframe(df, train=True, train_set_categorical_encoded_means=None):
     """ 
-    encode_dataframe takes a data frame df and performs a series of changes on it:
+    encode_dataframe takes a data frame and performs a series of changes on it:
     - it fills any missing categorical values with the string 'missing'
     - it replaces ordinal values with a numerical mapping
     - it fills any missing ordinal values with the mode of the respective feature
     - it fills any missing numerical values with the mean of the respective feature
-    - all categorical features are target smooth mean encoded
+    - it target encodes (+ smoothes) all categorical features 
     Parameters:
     -----------
     df: the data frame that you want to process
@@ -104,38 +104,44 @@ def encode_dataframe(df, train=True, train_set_categorical_encoded_means=None):
     df: the processed dataframe
     """
     
+    # Make a copy of df to perform the changes on it
+    
+    df_encoded = df.copy()
+    
     # Processing of categorical features
     
-    missing_categorical_features = df[categorical_features].isna().any()
+    missing_categorical_features = df_encoded[categorical_features].isna().any()
     missing_categorical_features = missing_categorical_features[missing_categorical_features==True].index.tolist()
-    df.fillna(value = {feature: 'missing' for feature in missing_categorical_features}, inplace = True)
+    df_encoded.fillna(value = {feature: 'missing' for feature in missing_categorical_features}, inplace = True)
     
     if train:
         ## train set
         for i in range(len(categorical_features)):
-            df[categorical_features_encoded[i]] = calc_smooth_mean(df, categorical_features[i], 'SalePrice', 10)
+            df_encoded[categorical_features_encoded[i]] = calc_smooth_mean(df_encoded, categorical_features[i], 'SalePrice', 10)
     else:
         ## val/test set
         for i in range(len(categorical_features)):
-            df[categorical_features_encoded[i]] = df[categorical_features[i]].copy()
+            df_encoded[categorical_features_encoded[i]] = df_encoded[categorical_features[i]].copy()
 
-        df = df.replace(train_set_categorical_encoded_means)
+        df_encoded = df_encoded.replace(train_set_categorical_encoded_means)
         
     # Processing of ordinal features
     
     for i in range(len(ordinal_features)):
-        df[ordinal_features_encoded[i]] = df[ordinal_features[i]].copy()    
+        df_encoded[ordinal_features_encoded[i]] = df_encoded[ordinal_features[i]].copy()    
         
-    df = df.replace(ordinal_encoding)
+    df_encoded = df_encoded.replace(ordinal_encoding)
     
-    missing_ordinal_features = df[ordinal_features_encoded].isna().any()
+    missing_ordinal_features = df_encoded[ordinal_features_encoded].isna().any()
     missing_ordinal_features = missing_ordinal_features[missing_ordinal_features==True].index.tolist()
-    df.fillna(value = {feature: df[feature].mode()[1] for feature in missing_ordinal_features}, inplace = True)
+    #import pdb; pdb.set_trace()
+    df_encoded.fillna(value = {feature: df_encoded[feature].mode()[0] for feature in missing_ordinal_features}, inplace = True)
     
     # Processing of numerical features
     
-    missing_numerical_features = df[numerical_features].isna().any()
+    missing_numerical_features = df_encoded[numerical_features].isna().any()
+    #pdb.set_trace()
     missing_numerical_features = missing_numerical_features[missing_numerical_features==True].index.tolist()
-    df.fillna(value = {feature: df[feature].mean() for feature in missing_numerical_features}, inplace = True)
+    df_encoded.fillna(value = {feature: df_encoded[feature].mean() for feature in missing_numerical_features}, inplace = True)
         
-    return df
+    return df_encoded

@@ -7,7 +7,7 @@ Below, I outline the goal of the challenge as well as how approached building a 
 
 ## Dataset 
 
-The 1460x82 dataset provided by Kaggle contains the data of 1460 houses in Ames, Iowa. Each house is described by 79 features, including general information such as the size in square feet and the year it was sold, as well as very specific details such as the slope of the property or the roof material (For the complete list of features, please view data_description.txt)
+The 1460x82 dataset provided by Kaggle contains the data of 1460 houses in Ames, Iowa. Each house is described by 79 features, including general information such as the size in square feet and the year it was sold, as well as very specific details such as the slope of the property or the roof material (For the complete list of features, please view <a href="https://github.com/HeleneFabia/house-prices-kaggle/blob/master/data_description.txt">data_description.txt</a>) 
 
 The goal of this competition is to build a model that that predicts the sale price of each house in the test set.
 

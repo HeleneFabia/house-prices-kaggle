@@ -1,5 +1,5 @@
 house_prices_kaggle
-# Project No. 2: Kaggle challenge "House Prices: Advanced Regression Techniques" 
+# Kaggle challenge "House Prices: Advanced Regression Techniques" 
 
 This is the submission of my frist Kaggle challenge: <a href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques">House Prices: Advanced Regression Techniques</a> 
 

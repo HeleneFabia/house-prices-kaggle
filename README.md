@@ -54,7 +54,6 @@ RMSLE of the <a href="https://github.com/HeleneFabia/house-prices-kaggle/blob/ma
 
 Although I'm quite satisfied with this project and my solution, there are still some things that could be improved:
 - My model uses every single feature in the dataframe. Creating new features that bundle some of the given features (e.g. the total number of square feet of a house) could make the model slimmer and thus faster and maybe also more accurate.
-- I only experimented with one type of decision tree algorithm, Random Forest Regressor. Maybe ExtraTrees Regressor, Gradient Boosting or XGBoost would yield better results.
 - My evaluation could be more detailed and include, for example, an in-depth analysis of those examples with the largest difference between the predicted and the actual prize.
 
 ## Problems I faced and how I solved them 
